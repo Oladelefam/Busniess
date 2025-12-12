@@ -3,6 +3,7 @@ from File import read_file, write_file
 from rich.table import Table
 from File_exist import check_file_exist
 from Table import Table_write
+from Date_log import Log
 
 
 print(str("===== Task Manager ====\n").center(30))
@@ -30,7 +31,7 @@ def add_task(title, Prior, due_date, descripition):
     
     file_read.append(Task) 
     write_file("Task.json", file_read) 
- 
+    Log('Date_log.txt', title, "add")
     print("Task added!!")
 
 
@@ -109,10 +110,10 @@ def main():
                 while len(Title) == 0:
                     Title = input("\nEnter task title: ").capitalize()
                 
-                Desc = input("Enter the descripition of your task: ").capitalize()
+                Desc = input("\nEnter the descripition of your task: ").capitalize()
 
                 while len(Desc) == 0:
-                    Desc = input("Enter the descripition of your task: ").capitalize()
+                    Desc = input("\nEnter the descripition of your task: ").capitalize()
 
 
                 priority = input("\nEnter priority level for task - Low, Mid, High: ").strip().capitalize()
@@ -121,8 +122,9 @@ def main():
                     print("Make sure it's either High, Mid, or Low")
                     priority = input("\nEnter priority level for task - Low, Mid, High: ").strip().capitalize()
         
+
                 due = True
-                Due_date = input("\nEnter the due date- D-M-YYYY: ")
+                Due_date = input("\nEnter the due date- D/M/YYYY: ")
 
                 while due:
                     Time = Date_validation(Due_date)
@@ -130,9 +132,8 @@ def main():
                     if Time == True:
                         due = False
                     else:
-                        Due_date = input("\nEnter the due date: ")
-                
-                Desc = input("Enter the descripition of your task: ")
+                        Due_date = input("\nEnter the due date- D/M/YYYY: ")
+
 
                 add_task(Title, priority, Due_date, Desc)
             except Exception as Exe:
