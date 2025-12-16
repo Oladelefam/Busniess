@@ -31,7 +31,7 @@ def add_task(title, Prior, due_date, descripition):
     
     file_read.append(Task) 
     write_file("Task.json", file_read) 
-    Log('Date_log.txt', title, "add")
+    Log('Date_log.txt', title, "added")
     print("Task added!!")
 
 
@@ -99,10 +99,10 @@ def complete_task():
 
 def main():
 
-    
+    while True:
         User_input = input("\nEnter the number of the choice or type quit to exit: ")
 
-        if int(User_input) == 1:
+        if int(User_input) == 1 or User_input.capitalize() == "Add task": # the new line of code brings up an error.
 
             try:
                 Title = input("\nEnter task title: ").capitalize()
@@ -139,11 +139,11 @@ def main():
             except Exception as Exe:
                 print(f"The python code just discovered a {Exe}")
 
-        elif int(User_input) == 2:
+        elif int(User_input) == 2 or User_input.capitalize() == "List task":
             Table_write()
-        elif int(User_input) == 3:
+        elif int(User_input) == 3 or User_input.capitalize() == "Complete task":
             complete_task()
-        elif int(User_input) == 4:
+        elif int(User_input) == 4 or User_input.capitalize() == "Delete task":
             Del_task()
         elif User_input == 'quit':
             exit("Bye")
