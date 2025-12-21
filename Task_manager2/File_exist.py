@@ -1,6 +1,6 @@
 import os
 import json
-from rich import console
+
 
 def check_file_exist(filename):
     try:

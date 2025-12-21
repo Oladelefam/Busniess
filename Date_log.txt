@@ -1,2 +1,6 @@
-Play games was added at: 2025-12-16 20:36:48.525466.
- 
+Do pushups  was added at: 2025-12-18 07:25:10.531907. 
+Complete this project was added at: 2025-12-19 07:32:52.771075. 
+{'Title': 'Do pushups ', 'Descripition': 'Exercise', 'Priority': 'Mid', 'Due_date': '12/2/2025', 'Completion': True} was complete at: 2025-12-19 14:23:44.580205. 
+Complete the cooking was added at: 2025-12-19 15:41:16.515864. 
+Complete this project was complete at: 2025-12-19 15:47:09.099278. 
+Complete this project was complete at: 2025-12-19 15:47:33.519072. 

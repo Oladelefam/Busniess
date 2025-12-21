@@ -1,1 +1,16 @@
-[{"Title": "Play chess", "Descripition": "Games", "Priority": "Low", "Due_date": "23/12/2025", "Completion": true}, {"Title": "Play games", "Descripition": "Games", "Priority": "Low", "Due_date": "21/2/2030", "Completion": false}]
+[
+     {
+          "Title": "Do pushups ",
+          "Descripition": "Exercise",
+          "Priority": "Mid",
+          "Due_date": "12/2/2025",
+          "Completion": true
+     },
+     {
+          "Title": "Complete this project",
+          "Descripition": "Coding",
+          "Priority": "High",
+          "Due_date": "31/12/2025",
+          "Completion": false
+     }
+]

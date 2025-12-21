@@ -6,14 +6,14 @@ from File_exist import check_file_exist
 from Table import Table_write
 from Date_log import Log
 
-
 print(str("===== Task Manager ====\n").center(30))
 
 print("""1.) Add Task
 2.) List Tasks
 3.) Mark as Complete
 4.) Delete Task
-5.) Quit\n""")
+5.) Edit task
+6.) Quit\n""")
 
 print("==========================")
 
@@ -58,6 +58,8 @@ def Del_task():
 
                 write_file("Task.json", file_read)
                 print(f"You've removed a task: {removed.get('Title')}")
+
+
             else:
                 print("Invalid task number.")
         except ValueError:
@@ -69,6 +71,7 @@ def Del_task():
                     break
             else:
                 print("Task not found.")
+        Log('Date_log.txt', Del_input, 'Deleted')
     else:
         print("No changes made.")
 
@@ -93,6 +96,7 @@ def complete_task():
 
     file_read[idx]["Completion"] = True
     write_file("Task.json", file_read)
+    Log('Date_log.txt', file_read[idx]["Title"], 'complete')
     print("Congratulations! You've completed a task.")
 
 
@@ -146,6 +150,16 @@ def main():
             complete_task()
         elif User_input == '4' or str(User_input).capitalize() == "Delete task":
             Del_task()
+        elif User_input == '5' or str(User_input).capitalize() =="Edit task":
+            print("""What do you want to edit?
+                1. Title
+                2. Description
+                3. Priority
+                4. Due Date
+                5. Mark Complete / Incomplete
+                6. Edit everything
+                7. Cancel
+                """)
         elif User_input == 'quit':
             exit("Bye")
         else:

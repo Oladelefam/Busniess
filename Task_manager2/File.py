@@ -6,7 +6,7 @@ def read_file(filename):
         return file_read
 
 def write_file(filename, cont):
-    with open(filename, 'a') as Write:
+    with open(filename, 'w') as Write:
         json.dump(cont, Write, indent=5)
 
         
