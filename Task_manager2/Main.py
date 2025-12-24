@@ -1,4 +1,5 @@
 #The delete task doesn't check if the file is empty this is a risk
+from Edit_file import Change_file
 from Date_validation import Date_validation
 from File import read_file, write_file
 from rich.table import Table
@@ -152,14 +153,16 @@ def main():
             Del_task()
         elif User_input == '5' or str(User_input).capitalize() =="Edit task":
             print("""What do you want to edit?
-                1. Title
-                2. Description
-                3. Priority
-                4. Due Date
-                5. Mark Complete / Incomplete
-                6. Edit everything
-                7. Cancel
-                """)
+        1. Title
+        2. Description
+        3. Priority
+        4. Due Date
+        5. Mark Complete / Incomplete
+        6. Edit everything
+        7. Cancel
+        """)
+            change_input = input("Enter what you would like to edit or type cancel to exit the program: ")
+            Change_file(change_input)
         elif User_input == 'quit':
             exit("Bye")
         else:

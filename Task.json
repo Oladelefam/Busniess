@@ -1,6 +1,6 @@
 [
      {
-          "Title": "Do pushups ",
+          "Title": "Pushups",
           "Descripition": "Exercise",
           "Priority": "Mid",
           "Due_date": "12/2/2025",
@@ -8,6 +8,13 @@
      },
      {
           "Title": "Complete this project",
+          "Descripition": "Coding",
+          "Priority": "High",
+          "Due_date": "31/12/2025",
+          "Completion": false
+     },
+     {
+          "Title": "Learn flask basics",
           "Descripition": "Coding",
           "Priority": "High",
           "Due_date": "31/12/2025",
