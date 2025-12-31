@@ -1,4 +1,4 @@
-#The delete task doesn't check if the file is empty this is a risk
+#Done
 from Edit_file import Change_file
 from Date_validation import Date_validation
 from File import read_file, write_file
@@ -11,10 +11,9 @@ print(str("===== Task Manager ====\n").center(30))
 
 print("""1.) Add Task
 2.) List Tasks
-3.) Mark as Complete
-4.) Delete Task
-5.) Edit task
-6.) Quit\n""")
+3.) Delete Task
+4.) Edit task
+5.) Quit\n""")
 
 print("==========================")
 
@@ -77,32 +76,6 @@ def Del_task():
         print("No changes made.")
 
 
-def complete_task():
-
-    check_file_exist('Task.json')
-
-    Table_write()
-
-    try:
-        selection = int(input("Enter the number of the task you have completed: ").strip())
-    except ValueError:
-        print("Please enter a valid number.")
-        return
-
-    file_read = read_file("Task.json")
-    idx = selection - 1
-    if idx < 0 or idx >= len(file_read):
-        print("Invalid task number.")
-        return
-
-    file_read[idx]["Completion"] = True
-    write_file("Task.json", file_read)
-    Log('Date_log.txt', file_read[idx]["Title"], 'complete')
-    print("Congratulations! You've completed a task.")
-
-
-
-
 def main():
 
     while True:
@@ -147,11 +120,9 @@ def main():
 
         elif User_input == '2' or str(User_input).capitalize() == "List task":
             Table_write()
-        elif User_input == '3' or str(User_input).capitalize() == "Complete task":
-            complete_task()
-        elif User_input == '4' or str(User_input).capitalize() == "Delete task":
+        elif User_input == '3' or str(User_input).capitalize() == "Delete task":
             Del_task()
-        elif User_input == '5' or str(User_input).capitalize() =="Edit task":
+        elif User_input == '4' or str(User_input).capitalize() =="Edit task":
             print("""What do you want to edit?
         1. Title
         2. Description
@@ -163,6 +134,7 @@ def main():
         """)
             change_input = input("Enter what you would like to edit or type cancel to exit the program: ")
             Change_file(change_input)
+       
         elif User_input == 'quit':
             exit("Bye")
         else:

@@ -48,9 +48,13 @@ def Change_file(User_input):
             return
         old = file_read[idx].get('Title')
         file_read[idx]['Title'] = new_title
-        write_file('Task.json', file_read)
-        Log('Date_log.txt', new_title, 'edited title')
-        print(f"Title updated: '{old}' -> '{new_title}'")
+        Check_input = input("Are you sure you want to save changes(y/n): ").lower()
+        if Check_input == "y":
+            write_file('Task.json', file_read)
+            Log('Date_log.txt', new_title, 'edited title')
+            print(f"Title updated: '{old}' -> '{new_title}'")
+        else:
+            print('Bye')
         return
 
     if choice in ('2', 'description', 'descripition'):
@@ -62,9 +66,13 @@ def Change_file(User_input):
             print("Description cannot be empty.")
             return
         file_read[idx]['Descripition'] = new_desc
-        write_file('Task.json', file_read)
-        Log('Date_log.txt', file_read[idx].get('Title', ''), 'edited description')
-        print("Description updated.")
+        Check_input = input("Are you sure you want to save changes(y/n): ").lower()
+        if Check_input == "y":
+            write_file('Task.json', file_read)
+            Log('Date_log.txt', file_read[idx].get('Title', ''), 'edited description')
+            print("Description updated.")
+        else:
+            print("Bye")
         return
 
     if choice in ('3', 'priority'):
@@ -89,9 +97,13 @@ def Change_file(User_input):
         while not Date_validation(Due_date):
             Due_date = input("Enter the due date - D/M/YYYY: ").strip()
         file_read[idx]['Due_date'] = Due_date
-        write_file('Task.json', file_read)
-        Log('Date_log.txt', file_read[idx].get('Title', ''), 'edited due date')
-        print("Due date updated.")
+        Check_input = input("Are you sure you want to save changes(y/n): ")
+        if Check_input == 'y':
+            write_file('Task.json', file_read)
+            Log('Date_log.txt', file_read[idx].get('Title', ''), 'edited due date')
+            print("Due date updated.")
+        else:
+            print("Bye")
         return
 
     if choice in ('5', 'complete', 'completion'):
@@ -107,10 +119,15 @@ def Change_file(User_input):
         else:
             print("No changes made to completion status.")
             return
-        write_file('Task.json', file_read)
-        status = 'complete' if file_read[idx]['Completion'] else 'incomplete'
-        Log('Date_log.txt', file_read[idx].get('Title', ''), f'marked {status}')
-        print(f"Task marked {status}.")
+        Check_input = input("Are you sure you want to save changes(y/n): ").lower()
+        if Check_input == "y":
+            write_file('Task.json', file_read)
+            status = 'complete' if file_read[idx]['Completion'] else 'incomplete'
+            Log('Date_log.txt', file_read[idx].get('Title', ''), f'marked {status}')
+            print(f"Task marked {status}.")
+        else:
+            print("Bye")
+
         return
 
     if choice in ('6', 'edit everything', 'everything'):
@@ -138,9 +155,13 @@ def Change_file(User_input):
             while not Date_validation(Due_date):
                 Due_date = input("Enter the due date - D/M/YYYY: ").strip()
             file_read[idx]['Due_date'] = Due_date
-        write_file('Task.json', file_read)
-        Log('Date_log.txt', file_read[idx].get('Title', ''), 'edited everything')
-        print("Task updated.")
+        Check_input = input("Are you sure you want to save changes(y/n): ")
+        if Check_input == 'y':
+            write_file('Task.json', file_read)
+            Log('Date_log.txt', file_read[idx].get('Title', ''), 'edited everything')
+            print("Task updated.")
+        else:
+            print("Bye")
         return
 
     print("Unknown choice. No changes made.")
