@@ -1,8 +1,7 @@
-html {
-    font-size: 22px;
-        }
+main pre {
 
-    body {
-            background-color: rgb(107, 189, 118);
-            color: black;
-                }
+    text-align: center;
+    color: #8ffcff;
+    font-size: x-large;
+
+}
