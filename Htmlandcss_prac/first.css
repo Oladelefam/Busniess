@@ -1,0 +1,17 @@
+
+body{
+    background-color: slategray;
+}
+#p1{
+    color: rgb(211, 211, 211);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#p3{
+    color: blue;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
