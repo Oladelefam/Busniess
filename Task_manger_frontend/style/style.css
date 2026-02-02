@@ -2,6 +2,7 @@ html {
     background-color: rgb(225, 217, 217);
 }
 
+
 h1 {
     font-family: 'Times New Roman', Times, serif;
 
@@ -10,7 +11,7 @@ h1 {
 button {
     border-radius: 12px;
     border-color: black;
-    background-color: #0000ff;
+    background-color:rgb(119, 114, 108);
     font-size: 20px;
 
     
@@ -24,12 +25,14 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  overflow: visible;
   background-color: rgb(180, 171, 171);
   border-radius: 15px;
 }
 ul li {
-  float: left;
+  float: none; /* use flexbox instead of floats */
 }
 
 ul li a {
@@ -51,4 +54,23 @@ main {
 #Title1 {
    text-decoration: none;
    color: #111111;
+}
+
+main {
+   background-color: rgba(225, 217, 217, 0.432);
+}
+
+/* style the link to look like a button */
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: rgb(119, 114, 108);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.Add {
+  margin-left: auto;
 }
