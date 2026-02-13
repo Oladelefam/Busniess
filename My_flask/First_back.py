@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 #Data class - row of data
 class MyTask(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    Content = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.String(100), nullable=False)
     complete = db.Column(db.Integer, default=0)
     created = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -23,7 +23,7 @@ class MyTask(db.Model):
 
 #Routes to Webpage
 #Home page
-@app.route("/", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET", ])
 
 def index():
     #Add a Task
@@ -41,10 +41,22 @@ def index():
     else:
         tasks = MyTask.query.order_by(MyTask.created).all()
 
-        return render_template("Main.html", task=tasks)
+        return render_template("Main.html", tasks=tasks)
 
     
 
+
+#Delete an item 
+@app.route("/delete/<int:id>")
+def delete(id:int):
+    delete_task = MyTask.query.get_or_404(id)
+    try:
+        db.session.delete(delete_task)
+        db.session.commit()
+        return redirect("/")
+    except Exception as e:
+        print(f"Error{e}")
+        return f"Error{e}"
 
 
 
