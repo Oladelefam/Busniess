@@ -1,0 +1,41 @@
+html {
+    background-color:rgba(234, 227, 227, 0);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  background-color: rgb(180, 171, 171);
+  border-radius: 15px;
+  text-decoration: none;
+}
+ul li {
+  float: none; /* use flexbox instead of floats */
+}
+
+ul li a {
+  display: inline-block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(240, 239, 243);
+  text-align: center;
+  padding: 14px 16px;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.Add {
+    margin-left: auto;
+    display: inline-block;
+    background-color: rgb(151, 109, 55);
+    border-radius: 15px ;
+}
