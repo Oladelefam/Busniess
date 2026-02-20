@@ -1,5 +1,5 @@
 html {
-    background-color:rgba(234, 227, 227, 0);
+    background-color:rgb(7, 0, 80);
 }
 ul {
   list-style-type: none;
@@ -8,7 +8,7 @@ ul {
   display: flex;
   align-items: center;
   overflow: visible;
-  background-color: rgb(180, 171, 171);
+  background-color: rgb(2, 124, 124);
   border-radius: 15px;
   text-decoration: none;
 }
@@ -37,13 +37,14 @@ img {
 .Add {
     margin-left: auto;
     display: inline-block;
-    background-color: rgb(151, 109, 55);
+    background-color: rgb(6, 81, 81);
     border-radius: 15px ;
 }
 .box {
-    background-color:rgb(224, 214, 214);
+    background-color:rgb(255, 255, 255);
     border-radius: 5px;
-    width: 200px;
-    height: 100px;
-    text-decoration: underline;
+    width: 540px;
+    height: 75px;
+    text-align: center;
+    
 }
