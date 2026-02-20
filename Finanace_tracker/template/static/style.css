@@ -13,7 +13,7 @@ ul {
   text-decoration: none;
 }
 ul li {
-  float: none; /* use flexbox instead of floats */
+  float:inline-start ; /* use flexbox instead of floats */
 }
 
 ul li a {
@@ -22,6 +22,7 @@ ul li a {
   color: rgb(240, 239, 243);
   text-align: center;
   padding: 14px 16px;
+  text-decoration: none;
 }
 
 ul li a:hover {
@@ -38,4 +39,11 @@ img {
     display: inline-block;
     background-color: rgb(151, 109, 55);
     border-radius: 15px ;
+}
+.box {
+    background-color:rgb(224, 214, 214);
+    border-radius: 5px;
+    width: 200px;
+    height: 100px;
+    text-decoration: underline;
 }
