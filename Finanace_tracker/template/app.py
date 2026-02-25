@@ -27,6 +27,7 @@ class MyFinance(db.Model):
 
 
 def index():
+    # Add data to the database
     if request.method == "POST":
         expense = request.form["expense"]
         cost = request.form["cost"]
@@ -45,7 +46,28 @@ def index():
     expenses = MyFinance.query.order_by(MyFinance.date).all()
     return render_template("Home.html", expenses=expenses)
        
- 
+@app.route("/Add", methods=["GET", "POST"])
+
+def Add():
+    if request.method == "POST":
+        expense = request.form["expense"]
+        cost = request.form["cost"]
+
+        new_expense = MyFinance(
+            expense=expense,
+            cost=cost,
+            category="General",
+            description="None"
+        )
+
+        db.session.add(new_expense)
+        db.session.commit()
+        return redirect("/Add")
+
+    expenses = MyFinance.query.order_by(MyFinance.date).all()
+    return render_template("Add.html", expenses=expenses)
+
+
 
 
 
