@@ -40,7 +40,7 @@ def index():
 
     # Total income
     income = db.session.query(func.sum(MyFinance.cost))\
-        .filter(MyFinance.type == "income")\
+        .filter(MyFinance.category == "Income")\
         .scalar() or 0
           
     return render_template("Home.html", expenses=expenses, total=total, income=income)
