@@ -28,24 +28,10 @@ class MyFinance(db.Model):
 
 
 def index():
-    # Add data to the database
-    if request.method == "POST":
-        expense = request.form["expense"]
-        cost = request.form["cost"]
 
-        new_expense = MyFinance(
-            expense=expense,
-            cost=cost,
-            category="General",
-            description="None"
-        )
-
-        db.session.add(new_expense)
-        db.session.commit()
-        return redirect("/")
     
     # Add Data
-    expenses = MyFinance.query.order_by(MyFinance.date).all()
+    expenses = MyFinance.query.order_by(MyFinance.date.desc()).all()
     
     # Total expense 
     total = db.session.query(func.sum(MyFinance.cost))\
@@ -57,7 +43,7 @@ def index():
         .filter(MyFinance.type == "income")\
         .scalar() or 0
           
-    return render_template("Home.html", expenses=expenses)
+    return render_template("Home.html", expenses=expenses, total=total, income=income)
        
 @app.route("/Add", methods=["GET", "POST"])
 
