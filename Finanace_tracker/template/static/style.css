@@ -78,3 +78,55 @@ img {
 .segment:hover {
     background-color: #eaeaea;
 }
+
+/* section for search bar/input style */
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  #searchInput {
+    width: 540px;              
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 15px;        
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  
+
+  #searchInput:focus {
+    box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.3);
+    border: 2px solid #2EC4B6;
+  }
+  
+
+  #itemList {
+    margin-top: 20px;
+    padding: 0;
+    display: block;   
+    background: none; 
+  }
+  
+  #itemList li {
+    background-color: white;
+    margin: 10px auto;
+    padding: 15px 20px;
+    width: 540px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    transition: 0.2s ease;
+  }
+  
+  #itemList li:hover {
+    background-color: #F0FBFA;
+    transform: translateY(-2px);
+  }
