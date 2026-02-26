@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from datetime import datetime
 
 app = Flask(__name__)
@@ -42,8 +43,20 @@ def index():
         db.session.add(new_expense)
         db.session.commit()
         return redirect("/")
-
+    
+    # Add Data
     expenses = MyFinance.query.order_by(MyFinance.date).all()
+    
+    # Total expense 
+    total = db.session.query(func.sum(MyFinance.cost))\
+        .filter(MyFinance.category != "Income")\
+        .scalar() or 0
+
+    # Total income
+    income = db.session.query(func.sum(MyFinance.cost))\
+        .filter(MyFinance.type == "income")\
+        .scalar() or 0
+          
     return render_template("Home.html", expenses=expenses)
        
 @app.route("/Add", methods=["GET", "POST"])
