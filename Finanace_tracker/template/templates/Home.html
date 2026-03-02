@@ -2,24 +2,12 @@
 
 {% block head %}
 <title> Homepage </title>
-
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
 
 {% block body %}
 <header></header>
-    <div class="topnav">
-        <h3>
-            <ul>
-                <li><a id="Dashboard" href="Dashboard.html" target="_blank">Dashboard</a></li>
-                <li><a id="Dashboard" href="Transactions.html" target="_blank">Transactions</a></li>
-                <li><a id="Dashboard" href="Budgets.html" target="_blank">Budgets & Goals</a></li>
-                <li><a id="Dashboard" href="Reports.html" target="_blank">Reports</a></li>
-                <li class="Add"><a href="{{ url_for('Add') }}" target="_blank" rel="noopener noreferrer" class="btn">+</a></li>
-            </ul>
-        </h3>
 
-    </div>
-</header>
 
 <main>
     <div class="stat-card">

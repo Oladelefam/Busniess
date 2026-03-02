@@ -65,7 +65,10 @@ img {
     text-align: center;
 }
 
-
+.Expense { 
+  width: 250px;
+  border-radius: 5px;
+}
 /* section for search bar/input style */
 .search-container {
     margin: 20px 0;

@@ -7,10 +7,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='Image/Icon.png') }}">
         <img id="Logo" src="{{ url_for('static', filename='Image/Logos.png') }}">
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
         {% block head %}{% endblock %}  
     </head>
     <body>
+        <div class="topnav">
+            <h3>
+                <ul>
+                    <li><a class="nav-link" href="Dashboard.html" target="_blank">Dashboard</a></li>
+                    <li><a class="nav-link" href="Transactions.html" target="_blank">Transactions</a></li>
+                    <li><a class="nav-link" href="Budgets.html" target="_blank">Budgets & Goals</a></li>
+                    <li><a class="nav-link" href="Reports.html" target="_blank">Reports</a></li>
+                    <li class="Add"><a href="{{ url_for('Add') }}" target="_self" rel="noopener noreferrer" class="btn">+</a></li>
+                </ul>
+            </h3>
+        </div>
         {% block body %}{% endblock %}
         
     </body>
