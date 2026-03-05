@@ -44,23 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.classList.add("loaded");
 
-     // dark mode 
 
-    const toggle = document.getElementById("darkToggle");
 
-    if (toggle) {
-        toggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
 
-            localStorage.setItem(
-                "darkMode",
-                document.body.classList.contains("dark-mode")
-            );
-        });
-
-        if (localStorage.getItem("darkMode") === "true") {
-            document.body.classList.add("dark-mode");
-        }
-    }
-
-});
