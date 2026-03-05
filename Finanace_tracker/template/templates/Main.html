@@ -9,6 +9,12 @@
         <img id="Logo" src="{{ url_for('static', filename='Image/Logos.png') }}">
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
+        <input id="searchInput">
+        <ul id="itemList">
+            {% for item in expenses %}
+                <li>{{ item.expense }}</li>
+            {% endfor %}
+        </ul>
 
         {% block head %}{% endblock %}  
     </head>
@@ -17,17 +23,20 @@
         <div class="topnav">
             <h3>
                 <ul>
-                    <li><a class="nav-link" href="Dashboard.html" target="_blank">Dashboard</a></li>
-                    <li><a class="nav-link" href="Transactions.html" target="_blank">Transactions</a></li>
-                    <li><a class="nav-link" href="Budgets.html" target="_blank">Budgets & Goals</a></li>
-                    <li><a class="nav-link" href="Reports.html" target="_blank">Reports</a></li>
-                    <li class="Add"><a href="{{ url_for('Add') }}" target="_self" rel="noopener noreferrer" class="btn">+</a></li>
+                    <li><a class="nav-link" href="{{ url_for('index') }}">Dashboard</a></li>
+                    <li><a class="nav-link" href="#">Transactions</a></li>
+                    <li><a class="nav-link" href="#">Budgets & Goals</a></li>
+                    <li><a class="nav-link" href="#">Reports</a></li>
+                    <li class="Add"><a href="{{ url_for('Add') }}" class="btn">+</a></li>
                 </ul>
             </h3>
         </div>
 
         <li>
-            <button id="darkToggle" class="segment">🌙</button>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
         </li>
         {% block body %}{% endblock %}
         

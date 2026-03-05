@@ -13,7 +13,9 @@ ul {
   text-decoration: none;
 }
 ul li {
-  float:inline-start ; /* use flexbox instead of floats */
+
+  float:inline-start ; 
+  /* flexbox already used in parent ul */
 
 }
 
@@ -73,7 +75,8 @@ img {
 .search-container {
     margin: 20px 0;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    outline: #0A2540;
   }
   
 
@@ -89,6 +92,7 @@ img {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+    margin-left: auto;
   }
   
 
@@ -120,29 +124,3 @@ img {
     background-color: #F0FBFA;
     transform: translateY(-2px);
   }
-
-
-.active-nav {
-    background-color: #2EC4B6;
-    border-radius: 10px;
-}
-
-
-body {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-body.loaded {
-    opacity: 1;
-}
-
-
-.dark-mode {
-    background-color: #0A2540;
-    color: white;
-}
-
-.dark-mode .stat-card {
-    background-color: #1c3b5a;
-}

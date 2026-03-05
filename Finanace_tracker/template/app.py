@@ -54,7 +54,7 @@ def Add():
 
         new_expense = MyFinance(
             expense=expense,
-            cost=cost,
+            cost=float(cost),
             category="General",
             description="None"
         )
