@@ -2,11 +2,15 @@
 
 {% block head %}
 <title> Homepage </title>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-<header></header>
+<input id="searchInput">
+<ul id="itemList">
+    {% for item in items %}
+        <li>{{ item.name }}</li>
+    {% endfor %}
+</ul>
 
 
 <main>

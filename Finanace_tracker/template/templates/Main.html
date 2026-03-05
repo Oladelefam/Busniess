@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='Image/Icon.png') }}">
         <img id="Logo" src="{{ url_for('static', filename='Image/Logos.png') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 
         {% block head %}{% endblock %}  
     </head>
@@ -23,11 +25,11 @@
                 </ul>
             </h3>
         </div>
-        {% block body %}{% endblock %}
 
         <li>
-  <button id="darkToggle" class="segment">🌙</button>
-</li>
+            <button id="darkToggle" class="segment">🌙</button>
+        </li>
+        {% block body %}{% endblock %}
         
     </body>
 </html>
