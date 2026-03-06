@@ -8,11 +8,16 @@
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='Image/Icon.png') }}">
         <img id="Logo" src="{{ url_for('static', filename='Image/Logos.png') }}">
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 
-        <input id="searchInput">
+
+        <div class="search-container">
+            <input id="searchInput" placeholder="Search expenses...">
+            <button type="submit" class="search-button"> 🔍 </button>
+        </div>
         <ul id="itemList">
-            {% for item in expenses %}
-                <li>{{ item.expense }}</li>
+            {% for expense in expenses %}
+                <li>{{ expense.expense }} - ${{ expense.cost }}</li>
             {% endfor %}
         </ul>
 
@@ -34,7 +39,7 @@
 
         <li>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="">
                 <span class="slider round"></span>
             </label>
         </li>
