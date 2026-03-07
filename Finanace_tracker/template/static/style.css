@@ -80,8 +80,8 @@ img {
 .search-container {
     display: flex;
     justify-content: flex-start;
-    margin-left: 100px;
-    padding-left: 120px;
+    margin-left: 20px;
+    padding-left: 20px;
     
   }
 
